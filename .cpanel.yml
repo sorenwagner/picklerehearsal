@@ -1,0 +1,6 @@
+
+---
+deployment:
+      tasks:
+        - export DEPLOYPATH=/home2/sorenwag/public_html/domains/picklerehearsal
+        - /bin/cp -r * $DEPLOYPATH
