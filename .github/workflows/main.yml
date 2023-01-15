@@ -1,0 +1,16 @@
+name: Main
+run-name: ${{ github.actor }} is testing out GitHub Actions
+on: [push]
+push:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: picklerehearsal
+        ref: 'main'
+        token:  ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+    - name: setup git config
+      run: |
+        git config user.name "sorenwagner"
+        git config user.email "<sorenwagner@gmail.com>"
+    - run: git remote add upstream sorenwag@umarchive.net/home2/sorenwag/public_html/domains/picklerehearsal 
